@@ -15,7 +15,7 @@
       <div class="advert-details">
         <div *ngIf="advert.photos.length > 0" class="carousel-container">
           <img *ngFor="let image of advert.photos;  let i=index"
-               [src]="advert.photos[i].photoUrl" [alt]="advert.photos[i].photoUrl"
+               [src]="image.data ? 'data:image/png;base64,' + image.data : image.photoUrl"
                [ngClass]="{'image-active': advert.selectedIndex === i}">
           <div class="carousel-dot-container">
     <span *ngFor="let dot of advert.photos; let i=index"
